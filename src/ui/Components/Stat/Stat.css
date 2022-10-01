@@ -1,0 +1,32 @@
+.stat__container--common {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  width: fit-content;
+}
+
+.stat__container--row {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.stat__value {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.stat__name {
+  margin-top: 10px;
+  font-size: 8px;
+  font-weight: 400;
+}
+
+.stat__icon {
+  width: 16px;
+  height: 16px;
+  background-color: aqua;
+}
