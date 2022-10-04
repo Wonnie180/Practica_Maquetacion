@@ -10,7 +10,7 @@
 .stat__container--row {
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: center;
   gap: 8px;
 }
 
@@ -23,10 +23,11 @@
   margin-top: 10px;
   font-size: 8px;
   font-weight: 400;
+  color: var(--grayscale__medium--gray);
+  text-transform: capitalize;
 }
 
 .stat__icon {
   width: 16px;
   height: 16px;
-  background-color: aqua;
 }

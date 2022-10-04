@@ -1,0 +1,30 @@
+/**/
+:root{
+    /* Pokemon Type */
+    --pokemon__type--rock: #b69e31;
+    --pokemon__type--ghost: #70559b;
+    --pokemon__type--steel: #b7b9d0;
+    --pokemon__type--water: #6493eb;
+    --pokemon__type--grass: #74cb48;
+    --pokemon__type--psychic: #fb5584;
+    --pokemon__type--ice: #9ad6df;
+    --pokemon__type--dark: #75574c;
+    --pokemon__type--normal: #aaa67f;
+    --pokemon__type--fighting: #c12239;
+    --pokemon__type--flying: #a891ec;
+    --pokemon__type--poison: #a43e9e;
+    --pokemon__type--ground: #dec16b;
+    --pokemon__type--bug: #a7b723;
+    --pokemon__type--fire: #f57d31;
+    --pokemon__type--electric: #f9cf30;
+    --pokemon__type--dragon: #7037ff;
+    --pokemon__type--fairy: #e69eac;
+
+    /* Grayscale */
+    --grayscale__dark--gray: #212121;
+    --grayscale__medium--gray: #666;
+    --grayscale__light--gray: #e0e0e0;
+    --grayscale__white: #ffffff;
+    --grayscale__background: #f7f7f7;
+    
+}

@@ -1,10 +1,10 @@
 import "./Tag.css";
 import React, { useEffect, useState, useContext } from "react";
 
-export const Tag = ({ name, type }) => {
+export const Tag = ({ type }) => {
   return (
-    <div className={"tag__container--common tag__container--" + type}>
-      <tag className="tag__name">{name}</tag>
+    <div className={"tag__container--common"} style={{ backgroundColor: `var(--pokemon__type--${type}` }}>
+      <article className="tag__name">{type}</article>
     </div>
   );
 };
