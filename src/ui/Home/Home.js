@@ -26,8 +26,9 @@ export const Home = () => {
 
   let id = 100;
   const ids = [];
-  const limite = 6;
+  const limite = 60;
   const max = 151;
+  // TODO id 21 -> Description
   for (let i = 1; i <= limite; i++) ids.push(Math.floor(Math.random() * max));
 
   useEffect(() => {
@@ -70,11 +71,13 @@ export const Home = () => {
       const pokemonsFetched = (await Promise.all(pokemonPromises)).map(
         (pokemon) => ParsePokemonJson(pokemon)
       );
+
       (await Promise.all(pokemonDescriptionsPromises)).forEach(
         (pokemonDescription, index) =>
           (pokemonsFetched[index].description =
             pokemonDescription.flavor_text_entries?.[9].flavor_text)
       );
+
       setPokemons(pokemonsFetched);
     };
     fetchPokemon(ids);
