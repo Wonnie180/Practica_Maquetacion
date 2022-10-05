@@ -8,10 +8,12 @@ const ParsePokemonJson = (pokemonJson) => {
     name: pokemonJson.name,
     id: pokemonJson.id,
     types: [],
-    description:
-      "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
-    weight: pokemonJson.weight / 10,
-    height: pokemonJson.height / 10,
+    description: "Placeholder",
+    stats: [
+      ["weight", pokemonJson.weight / 10, "kg"],
+      ["height", pokemonJson.height / 10, "m"],
+      ["moves", pokemonJson.abilities?.[0].ability.name],
+    ],
   };
   pokemonJson.types?.forEach((type) =>
     pokemonParsed.types.push(type?.type?.name)
@@ -21,42 +23,46 @@ const ParsePokemonJson = (pokemonJson) => {
 };
 
 export const Home = () => {
-  const [pokemon, setPokemon] = useState(undefined);
+  // const [pokemon, setPokemon] = useState(undefined);
   const [pokemons, setPokemons] = useState(undefined);
 
   let id = 100;
   const ids = [];
-  const limite = 60;
-  const max = 151;
+  const limite = 6;
+  const max = 150;
+  ids.push(21);
   // TODO id 21 -> Description
-  for (let i = 1; i <= limite; i++) ids.push(Math.floor(Math.random() * max));
+  for (let i = 1; i <= limite; i++)
+    ids.push(Math.floor(Math.random() * max) + 1);
 
-  useEffect(() => {
-    const fetchPokemon = async (id) => {
-      const pokemonJson = await PokeAPI.getPokemon(id);
-      const pokemonDescriptionJson = await PokeAPI.getPokemonDescription(id);
+  // useEffect(() => {
+  //   const fetchPokemon = async (id) => {
+  //     const pokemonJson = await PokeAPI.getPokemon(id);
+  //     const pokemonDescriptionJson = await PokeAPI.getPokemonDescription(id);
 
-      const pokemonParsed = {
-        name: pokemonJson.name,
-        id: pokemonJson.id,
-        types: [],
-        description:
-          "There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.",
-        weight: pokemonJson.weight / 10,
-        height: pokemonJson.height / 10,
-      };
-      pokemonJson.types?.forEach((type) =>
-        pokemonParsed.types.push(type?.type?.name)
-      );
+  //     const pokemonParsed = {
+  //       name: pokemonJson.name,
+  //       id: pokemonJson.id,
+  //       types: [],
+  //       description: "Placeholder",
+  //       stats: {
+  //         weight: pokemonJson.weight / 10,
+  //         height: pokemonJson.height / 10,
+  //         ability: [],
+  //       },
+  //     };
+  //     pokemonJson.types?.forEach((type) =>
+  //       pokemonParsed.types.push(type?.type?.name)
+  //     );
 
-      pokemonParsed.description =
-        pokemonDescriptionJson.flavor_text_entries?.[9].flavor_text;
+  //     pokemonParsed.description =
+  //       pokemonDescriptionJson.flavor_text_entries?.[9].flavor_text;
 
-      setPokemon(pokemonParsed);
-    };
+  //     setPokemon(pokemonParsed);
+  //   };
 
-    fetchPokemon(id);
-  }, []);
+  //   fetchPokemon(id);
+  // }, []);
 
   useEffect(() => {
     const fetchPokemon = async (pokemonsToFetch) => {

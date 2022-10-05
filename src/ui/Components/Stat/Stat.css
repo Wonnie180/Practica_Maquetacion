@@ -17,6 +17,7 @@
 .stat__value {
   font-size: 10px;
   font-weight: 400;
+  text-transform: capitalize;
 }
 
 .stat__name {

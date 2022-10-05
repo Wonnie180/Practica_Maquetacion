@@ -11,7 +11,6 @@ function pad(num, size) {
 }
 
 export const PokeCard = ({ pokemon }) => {
-  
   return (
     <section
       className="card__container--main"
@@ -39,11 +38,24 @@ export const PokeCard = ({ pokemon }) => {
           About
         </h2>
         <div className="card__stats">
-          <Stat type="weight" value={`${pokemon.weight} kg`} />
-          <div className="vl"></div>
-          <Stat type="height" value={`${pokemon.height} m`} />
+          {pokemon.stats.map(([name, value, unit], index) => {
+            if (unit !== undefined)
+              return (
+                <div className="card__stat--container">
+                  <Stat key={index} type={name} value={`${value} ${unit}`} />
+                </div>
+              );
+            else
+              return (
+                <div className="card__stat--container">
+                  <Stat key={index} type={name} value={`${value}`} />
+                </div>
+              );
+          })}
         </div>
-        <p className="card__description">{pokemon.description}</p>
+        <div className="card__description ellipsis ellipsis--3">
+          <span>{pokemon.description}</span>
+        </div>
       </section>
     </section>
   );
