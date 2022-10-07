@@ -1,14 +1,14 @@
 import "./PokeCard.css";
-import React, { useEffect, useState, useContext } from "react";
+import React from "react";
 import { Tag } from "../Tag/Tag";
 import { Stat } from "../Stat/Stat";
 
-function pad(num, size) {
+const pad = (num, size) => {
   if (num === undefined || size === 0) return num;
   num = num.toString();
   while (num.length < size) num = "0" + num;
   return num;
-}
+};
 
 export const PokeCard = ({ pokemon }) => {
   return (
@@ -53,7 +53,7 @@ export const PokeCard = ({ pokemon }) => {
               );
           })}
         </div>
-        <div className="card__description ellipsis ellipsis--3">
+        <div tabindex="-1" className="card__description ellipsis ellipsis--3">
           <span>{pokemon.description}</span>
         </div>
       </section>

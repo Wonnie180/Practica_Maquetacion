@@ -1,28 +1,26 @@
-// import IPokeAPI from "../Interfaces/IPokeAPI";
-
-// export class PokeAPI implements IPokeAPI {
-//     BASE_URL: string = "https://pokeapi.co/api/v2/";
-//     getPokemon(number): IPokemon;
-//     getManagerName(number): string;
-//   }
-
-// export default PokeAPI;
-
-// https://pokeapi.co/api/v2/pokemon/{id}
-
 const BASE_URL = "https://pokeapi.co/api/v2/";
-// `https://pokeapi.co/api/v2/${id}`
 export const api = {
-  getPokemon: async (id) => {
+  getPokemonById: async (id) => {
     const response = await fetch(BASE_URL + "pokemon/" + id);
     return await response.json();
   },
-  getPokemons: async (id) => {
+  getPokemonsById: async (id) => {
     const response = await fetch(BASE_URL + "pokemon/" + id);
     return await response.json();
   },
-  getPokemonDescription: async (id) => {
+  getPokemonDescriptionById: async (id) => {
     const response = await fetch(BASE_URL + "pokemon-species/" + id);
+    return await response.json();
+  },
+
+  getPokemonDescriptionByName: async (name) => {
+    const response = await fetch(BASE_URL + "pokemon-species/" + name);
+    return await response.json();
+  },
+  getPokemonByName: async (name) => {
+    const response = await fetch(BASE_URL + "pokemon/" + name);
+
+    if (!response.ok) throw new Error("Pokemon not found");
     return await response.json();
   },
 };

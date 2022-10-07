@@ -1,5 +1,5 @@
 import "./Stat.css";
-import React, { useEffect, useState, useContext } from "react";
+import React from "react";
 import HeightIcon from "../../Assets/Icons/HeightIcon.svg";
 import WeightIcon from "../../Assets/Icons/WeightIcon.svg";
 

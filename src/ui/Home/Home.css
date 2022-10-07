@@ -1,9 +1,38 @@
-.cards__container--main {
+body {
+  min-height: 100vh;
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.header--main{
   width: 100%;
+  flex: 0 0 auto;
+}
+
+.search_container--main{
+  margin:auto;
+  margin-top: 41px;
+  width: 50%;
+  height: 34px;
+}
+
+.cards__container--main {
+  margin-top: 54px;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 24px;
   justify-content: center;
   align-items: flex-end;
+}
+
+.footer--main{
+  margin-top: 34px;
+  width: 100%;
 }

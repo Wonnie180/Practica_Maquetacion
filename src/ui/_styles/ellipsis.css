@@ -25,7 +25,7 @@
   white-space: normal;
 }
 
-.ellipsis:hover {
+.ellipsis:focus {
   background-color: inherit;
   outline: 1px solid;
   min-width: 100%;

@@ -1,0 +1,30 @@
+.footer__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center ;
+  gap: 16px;
+  border: 1px solid #E0E0E0;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background-color: var(--grayscale__white);
+
+
+}
+
+.github__icon, .pokeapi__icon{
+    height: 42px;
+
+}
+
+.search__input{
+    margin-right: 8px;
+    width: 100%;
+    border: 0px;
+}
+
+.search__input:focus{
+    outline: none;
+}
